@@ -5,7 +5,10 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Amatroys</Text>
+      <Text style={{
+        fontFamily: 'Dancing Script',
+        fontSize: 40
+      }}>Amatory</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#231A1F',
     alignItems: 'center',
     justifyContent: 'center',
   },
