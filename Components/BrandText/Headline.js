@@ -14,6 +14,6 @@ export default function Headline() {
 
     return <Text style={{
         fontFamily: 'DancingScript_600SemiBold',
-        fontSize: 50
+        fontSize: 50,
     }}>Amatory</Text>;
 }
