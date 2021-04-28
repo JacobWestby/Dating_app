@@ -3,59 +3,45 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 
 export default function Login() {
     return (
-        <View style={{
-            width: "70%",
-            marginTop: "30%"
-        }}>
-            <Text style={styles3.Login}>
+        <View style={styles.Container}>
+            <Text style={styles.Text}>
                 Login
             </Text>
-
-            <Text style={styles2.Text}>
+            <Text style={styles.Text}>
                 Email
             </Text>
-
-            <TextInput
-                style={styles1.textBox}
-            />
-
-            <Text style={styles2.Text}>
+            <View>
+                <TextInput style={styles.TextBox} placeholder="Email" placeholderTextColor="#f4f4" />
+            </View>
+            <Text style={styles.Text}>
                 Password
             </Text>
-            
-            <TextInput
-                style={styles1.textBox}
-            />
+            <View>
+                <TextInput style={styles.TextBox} placeholder="Password" placeholderTextColor="#f4f4" />
+            </View>
         </View>
     )
 }
 
-const styles3 = StyleSheet.create({
+const styles = StyleSheet.create({
+    Container: {
+        flex: 1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-around",
+    },
     Login: {
         textAlign: "center",
         color: "white",
         fontSize: 25,
-        marginBottom: 40
-    }
-})
-
-const styles2 = StyleSheet.create({
+    },
     Text: {
-        marginTop: 20,
-        marginBottom: 20,
         fontSize: 20,
         color: "white"
-
-    }
-})
-
-const styles1 = StyleSheet.create({
-    textBox: {
-        display: "flex",
-        justifyContent: "space-between",
-        flexDirection: "column",
+    },
+    TextBox: {
         backgroundColor: "#fff",
-        height: "13%"
+        height: "23%",
+        width: 200
     }
-
 })
