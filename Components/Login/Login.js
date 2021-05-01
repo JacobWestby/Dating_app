@@ -1,23 +1,39 @@
 import React from 'react'
-import { View, Text, TextInput, StyleSheet } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default function Login() {
     return (
         <View style={styles.Container}>
-            <Text style={styles.Text}>
+            <Text style={styles.Login}>
                 Login
             </Text>
-            <Text style={styles.Text}>
-                Email
+            <View style={styles.InnerContainer} >
+                <Text style={styles.Text}>
+                    Email
             </Text>
-            <View>
-                <TextInput style={styles.TextBox} placeholder="Email" placeholderTextColor="#f4f4" />
+                <View>
+                    <TextInput style={styles.TextBox} placeholder="Email" placeholderTextColor="#f4f4" />
+                </View>
+                <Text style={styles.Text}>
+                    Password
+            </Text>
+                <View>
+                    <TextInput style={styles.TextBox} placeholder="Password" placeholderTextColor="#f4f4" />
+                </View>
             </View>
-            <Text style={styles.Text}>
-                Password
-            </Text>
             <View>
-                <TextInput style={styles.TextBox} placeholder="Password" placeholderTextColor="#f4f4" />
+                <TouchableOpacity>
+                    <Text style={styles.Touchable}>
+                        Continue
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            <View>
+                <TouchableOpacity>
+                    <Text style={styles.Forogt}>
+                        Forgot password?
+                    </Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -25,23 +41,37 @@ export default function Login() {
 
 const styles = StyleSheet.create({
     Container: {
-        flex: 1,
-        display: "flex",
+        height: "80%",
         alignItems: "center",
-        justifyContent: "space-around",
+        justifyContent: "center",
+        // backgroundColor: "red"
+
+    },
+    InnerContainer: {
+        marginTop: 50,
+        // backgroundColor: "red"
     },
     Login: {
-        textAlign: "center",
         color: "white",
         fontSize: 25,
     },
     Text: {
+        marginBottom: 12,
         fontSize: 20,
         color: "white"
     },
     TextBox: {
         backgroundColor: "#fff",
-        height: "23%",
-        width: 200
+        width: 200,
+        marginBottom: 12
+    },
+    Touchable: {
+        fontSize: 20,
+        color: "#fff"
+    },
+    Forogt: {
+        marginTop: 20,
+        fontSize: 15,
+        color: "rgba(255, 255, 255, 0.5)"
     }
 })
