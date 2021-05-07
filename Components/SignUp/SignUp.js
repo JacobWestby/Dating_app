@@ -1,49 +1,52 @@
 import React from 'react'
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Button } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export default function Login({ navigation }) {
+export default function SignUp() {
     return (
         <View style={styles.Container}>
             <Text style={styles.Login}>
-                Login
-            </Text>
-            <View style={styles.InnerContainer} >
+                Create Account
+        </Text>
+            <View>
+                <Image source={{ uri: "https://freepngimg.com/thumb/mario/20698-7-mario-transparent-background.png" }} style={styles.profilePic}
+                />
+            </View>
+            <View style={styles.ButtonContainer}>
+                <Button style={{ color: 'red' }} title="Choose a profile picture" />
+            </View>
+            <View>
                 <Text style={styles.Text}>
                     Email
-            </Text>
+        </Text>
+                <View>
+                    <TextInput style={styles.TextBox} placeholder="Email" placeholderTextColor="#f4f4" />
+                </View>
+                <Text style={styles.Text}>
+                    Confirm Email
+        </Text>
                 <View>
                     <TextInput style={styles.TextBox} placeholder="Email" placeholderTextColor="#f4f4" />
                 </View>
                 <Text style={styles.Text}>
                     Password
-            </Text>
+        </Text>
                 <View>
                     <TextInput style={styles.TextBox} placeholder="Password" placeholderTextColor="#f4f4" />
+                </View>
+                <Text style={styles.Text}>
+                    Confirm Password
+        </Text>
+                <View>
+                    <TextInput style={styles.TextBox} placeholder="Email" placeholderTextColor="#f4f4" />
                 </View>
             </View>
             <View>
                 <TouchableOpacity>
                     <Text style={styles.Touchable}>
                         Continue
-                    </Text>
-                </TouchableOpacity>
-            </View>
-            <View>
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                    <View>
-                        <Text style={styles.SignUp}>
-                            SignUp
-                        </Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View>
-                <TouchableOpacity>
-                    <Text style={styles.Forogt}>
-                        Forgot password?
-                    </Text>
+                </Text>
                 </TouchableOpacity>
             </View>
         </View >
@@ -60,12 +63,14 @@ const styles = StyleSheet.create({
         width: "100%",
         justifyContent: "center"
     },
-    InnerContainer: {
-        marginTop: 50,
-    },
     Login: {
         color: "white",
         fontSize: 25,
+        marginBottom: 40
+    },
+    profilePic: {
+        height: 100,
+        width: 80
     },
     Text: {
         marginBottom: 12,
@@ -81,14 +86,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "#fff"
     },
-    SignUp: {
-        fontSize: 20,
-        color: "#fff",
-        marginTop: 20
+    ButtonContainer: {
+        marginTop: 13,
+        marginBottom: 30,
     },
-    Forogt: {
-        marginTop: 20,
-        fontSize: 15,
-        color: "rgba(255, 255, 255, 0.5)"
+    Choose: {
+        fontSize: 16,
+        color: "white",
     }
 })
