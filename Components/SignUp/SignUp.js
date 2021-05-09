@@ -1,11 +1,18 @@
 import React from 'react'
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Button } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Button, SafeAreaView } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export default function SignUp() {
+export default function SignUp({ navigation }) {
     return (
-        <View style={styles.Container}>
+        <SafeAreaView style={styles.Container}>
+            <View style={styles.BackContainer}>
+                <TouchableOpacity style={styles.Back} onPress={() => navigation.goBack()} title="Back" >
+                    <Text style={styles.Text}>
+                        {"< Back"}
+                    </Text>
+                </TouchableOpacity>
+            </View>
             <Text style={styles.Login}>
                 Create Account
         </Text>
@@ -14,7 +21,7 @@ export default function SignUp() {
                 />
             </View>
             <View style={styles.ButtonContainer}>
-                <Button style={{ color: 'red' }} title="Choose a profile picture" />
+                <Button title="Choose a profile picture" />
             </View>
             <View>
                 <Text style={styles.Text}>
@@ -49,7 +56,7 @@ export default function SignUp() {
                 </Text>
                 </TouchableOpacity>
             </View>
-        </View >
+        </SafeAreaView>
     )
 }
 
@@ -59,9 +66,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: 'center',
         backgroundColor: '#231A1F',
-        height: "100%",
-        width: "100%",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     Login: {
         color: "white",
@@ -93,5 +98,10 @@ const styles = StyleSheet.create({
     Choose: {
         fontSize: 16,
         color: "white",
+    },
+    BackContainer: {
+        position: "absolute",
+        top: 20,
+        left: 30
     }
 })
